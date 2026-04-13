@@ -5,121 +5,309 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Abdesselam Salmi - Senior Motion Graphic Designer portfolio and contact links">
     <meta name="author" content="Abdesselam Salmi">
-    <meta name="theme-color" content="#0f0f10">
-    <title>Abdesselam Salmi - Business Card</title>
+    <meta name="theme-color" content="#080810">
+    <title>Abdesselam Salmi — Motion Designer</title>
 
-    <!-- Font Awesome for Icons -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- External Stylesheet -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Animated canvas background -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+    <!-- Ambient light orbs -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <!-- Noise texture overlay -->
+    <div class="noise" aria-hidden="true"></div>
+
     <main class="container">
         <article class="glass-card" aria-label="Business card for Abdesselam Salmi">
-            <!-- Profile Picture -->
+
+            <!-- Animated border ring -->
+            <div class="card-ring" aria-hidden="true"></div>
+
+            <!-- Profile -->
             <div class="profile-section">
                 <div class="profile-wrapper">
+                    <div class="profile-ring" aria-hidden="true"></div>
+                    <div class="profile-ring profile-ring--2" aria-hidden="true"></div>
                     <img
                         src="Profile_Pic.png"
-                        alt="Abdesselam Salmi - Senior Motion Graphic Designer"
+                        alt="Abdesselam Salmi"
                         class="profile-pic"
                         width="140"
                         height="140"
                         loading="eager"
                     >
                 </div>
+                <!-- Status indicator -->
+                <div class="status-badge" aria-label="Available for work">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Available for projects</span>
+                </div>
             </div>
 
-            <!-- Name & Title -->
+            <!-- Identity -->
             <div class="info-section">
-                <h1 class="name">Abdesselam Salmi</h1>
-                <p class="title">Senior Motion Graphic Designer</p>
+                <h1 class="name">
+                    <span class="name-first">Abdesselam</span>
+                    <span class="name-last">Salmi</span>
+                </h1>
+                <div class="title-row">
+                    <span class="title-line"></span>
+                    <p class="title">Senior Motion Graphic Designer</p>
+                    <span class="title-line"></span>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider" aria-hidden="true">
+                <span class="divider-dot"></span>
+                <span class="divider-line"></span>
+                <span class="divider-diamond">&#9670;</span>
+                <span class="divider-line"></span>
+                <span class="divider-dot"></span>
             </div>
 
             <!-- Social Links -->
-            <nav class="social-links" aria-label="Social media and contact links">
-                <a
-                    href="https://www.behance.net/yacinessesalmi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visit Abdesselam Salmi on Behance"
-                    class="social-link"
-                    data-icon="behance"
-                >
+            <nav class="social-links" aria-label="Contact and social links">
+
+                <a href="https://www.behance.net/yacinessesalmi"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Behance portfolio"
+                   class="social-link" data-icon="behance">
                     <i class="fa-brands fa-behance" aria-hidden="true"></i>
                     <span class="social-label">Behance</span>
                 </a>
 
-                <a
-                    href="https://www.linkedin.com/in/abdesselam-salmi-070819242"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Connect with Abdesselam Salmi on LinkedIn"
-                    class="social-link"
-                    data-icon="linkedin"
-                >
+                <a href="https://www.linkedin.com/in/abdesselam-salmi-070819242"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="LinkedIn profile"
+                   class="social-link" data-icon="linkedin">
                     <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     <span class="social-label">LinkedIn</span>
                 </a>
 
-                <a
-                    href="https://api.whatsapp.com/send/?phone=971503531737&text=Hi+I+found+your+business+card&type=phone_number&app_absent=0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Chat with Abdesselam Salmi on WhatsApp"
-                    class="social-link"
-                    data-icon="whatsapp"
-                >
+                <a href="https://api.whatsapp.com/send/?phone=971503531737&text=Hi+I+found+your+business+card&type=phone_number&app_absent=0"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="WhatsApp chat"
+                   class="social-link" data-icon="whatsapp">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                     <span class="social-label">WhatsApp</span>
                 </a>
 
-                <a
-                    href="https://www.instagram.com/yacinesse"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Abdesselam Salmi on Instagram"
-                    class="social-link"
-                    data-icon="instagram"
-                >
+                <a href="https://www.instagram.com/yacinesse"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Instagram profile"
+                   class="social-link" data-icon="instagram">
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     <span class="social-label">Instagram</span>
                 </a>
 
-                <a
-                    href="https://t.me/yacinesse"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Message Abdesselam Salmi on Telegram"
-                    class="social-link"
-                    data-icon="telegram"
-                >
+                <a href="https://t.me/yacinesse"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Telegram"
+                   class="social-link" data-icon="telegram">
                     <i class="fa-brands fa-telegram" aria-hidden="true"></i>
                     <span class="social-label">Telegram</span>
                 </a>
 
-                <a
-                    href="mailto:yacinesse@gmail.com"
-                    aria-label="Send email to Abdesselam Salmi"
-                    class="social-link"
-                    data-icon="email"
-                >
+                <a href="mailto:yacinesse@gmail.com"
+                   aria-label="Send email"
+                   class="social-link" data-icon="email">
                     <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <span class="social-label">Email</span>
                 </a>
+
             </nav>
         </article>
 
-        <!-- Footer -->
         <footer class="footer">
-            <p>&copy; <span id="year"></span> Abdesselam Salmi. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Abdesselam Salmi</p>
         </footer>
     </main>
 
     <script>
-        // Auto-update year in footer
+        // ── Year ──────────────────────────────────────────────────
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ── Canvas particle system ────────────────────────────────
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, particles = [], mouse = { x: -9999, y: -9999 };
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() { this.reset(true); }
+            reset(random = false) {
+                this.x = Math.random() * W;
+                this.y = random ? Math.random() * H : H + 10;
+                this.r = Math.random() * 1.8 + 0.4;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = -(Math.random() * 0.5 + 0.2);
+                this.life = 0;
+                this.maxLife = Math.random() * 200 + 120;
+                this.hue = Math.random() * 60 + 220;
+            }
+            update() {
+                const dx = this.x - mouse.x, dy = this.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 80) {
+                    this.vx += (dx / dist) * 0.15;
+                    this.vy += (dy / dist) * 0.15;
+                }
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= 0.99;
+                this.vy *= 0.99;
+                this.life++;
+                if (this.life > this.maxLife || this.y < -10) this.reset();
+            }
+            draw() {
+                const alpha = Math.sin((this.life / this.maxLife) * Math.PI) * 0.55;
+                ctx.save();
+                ctx.globalAlpha = alpha;
+                ctx.fillStyle = `hsl(${this.hue}, 80%, 70%)`;
+                ctx.shadowColor = `hsl(${this.hue}, 90%, 60%)`;
+                ctx.shadowBlur = 6;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function drawConnections() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 90) {
+                        ctx.save();
+                        ctx.globalAlpha = (1 - d / 90) * 0.12;
+                        ctx.strokeStyle = `hsl(250, 70%, 70%)`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }
+            }
+        }
+
+        function init() {
+            resize();
+            particles = Array.from({ length: 80 }, () => new Particle());
+        }
+
+        function loop() {
+            ctx.clearRect(0, 0, W, H);
+            drawConnections();
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(loop);
+        }
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener('touchmove', e => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        }, { passive: true });
+
+        init();
+        loop();
+
+        // ── Staggered card entrance ───────────────────────────────
+        document.querySelectorAll('.social-link').forEach((el, i) => {
+            el.style.setProperty('--delay', `${i * 0.07 + 0.5}s`);
+        });
+
+        // ── Magnetic 3-D tilt + cursor spotlight ─────────────────
+        const links = document.querySelectorAll('.social-link');
+        const TILT   = 14;   // max tilt degrees
+        const LIFT   = -8;   // px lift on hover
+        const SCALE  = 1.10;
+
+        links.forEach(el => {
+            let raf = null;
+            let isHovered = false;
+
+            function applyTilt(e) {
+                const r   = el.getBoundingClientRect();
+                const cx  = r.left + r.width  / 2;
+                const cy  = r.top  + r.height / 2;
+                const dx  = (e.clientX - cx) / (r.width  / 2);  // -1 → 1
+                const dy  = (e.clientY - cy) / (r.height / 2);  // -1 → 1
+
+                // Cursor position as % for the ::before spotlight
+                const mx  = ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%';
+                const my  = ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%';
+
+                cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(() => {
+                    el.style.transform =
+                        `perspective(600px)
+                         translateY(${LIFT}px)
+                         scale(${SCALE})
+                         rotateY(${dx * TILT}deg)
+                         rotateX(${-dy * TILT}deg)`;
+                    el.style.setProperty('--mx', mx);
+                    el.style.setProperty('--my', my);
+                });
+            }
+
+            function resetTilt() {
+                isHovered = false;
+                cancelAnimationFrame(raf);
+                // Spring-back via CSS transition
+                el.style.transition =
+                    'transform 0.5s cubic-bezier(0.34,1.56,0.64,1), border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease';
+                el.style.transform = 'perspective(600px) translateY(0) scale(1) rotateY(0deg) rotateX(0deg)';
+            }
+
+            el.addEventListener('mouseenter', () => {
+                isHovered = true;
+                el.style.transition = 'border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease';
+            });
+
+            el.addEventListener('mousemove', applyTilt);
+
+            el.addEventListener('mouseleave', resetTilt);
+
+            // Click ripple burst
+            el.addEventListener('click', function(e) {
+                const r    = el.getBoundingClientRect();
+                const size = Math.max(r.width, r.height) * 1.5;
+                const x    = e.clientX - r.left - size / 2;
+                const y    = e.clientY - r.top  - size / 2;
+
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                ripple.style.cssText =
+                    `width:${size}px; height:${size}px; left:${x}px; top:${y}px;`;
+                el.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+        });
     </script>
 </body>
 </html>
