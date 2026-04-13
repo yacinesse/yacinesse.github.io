@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdesselam Salmi - Senior Motion Graphic Designer portfolio and contact links">
+    <meta name="author" content="Abdesselam Salmi">
+    <meta name="theme-color" content="#0f0f10">
+    <title>Abdesselam Salmi - Business Card</title>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <article class="glass-card" aria-label="Business card for Abdesselam Salmi">
+            <!-- Profile Picture -->
+            <div class="profile-section">
+                <img
+                    src="Profile_Pic.png"
+                    alt="Abdesselam Salmi - Senior Motion Graphic Designer"
+                    class="profile-pic"
+                    width="140"
+                    height="140"
+                    loading="eager"
+                >
+            </div>
+
+            <!-- Name & Title -->
+            <div class="info-section">
+                <h1 class="name">Abdesselam Salmi</h1>
+                <p class="title">Senior Motion Graphic Designer</p>
+            </div>
+
+            <!-- Social Links -->
+            <nav class="social-links" aria-label="Social media and contact links">
+                <a
+                    href="https://www.behance.net/yacinessesalmi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Abdesselam Salmi on Behance"
+                    class="social-link"
+                >
+                    <i class="fa-brands fa-behance" aria-hidden="true"></i>
+                    <span class="social-label">Behance</span>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/abdesselam-salmi-070819242"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect with Abdesselam Salmi on LinkedIn"
+                    class="social-link"
+                >
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    <span class="social-label">LinkedIn</span>
+                </a>
+
+                <a
+                    href="https://api.whatsapp.com/send/?phone=971503531737&text=Hi+I+found+your+business+card&type=phone_number&app_absent=0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with Abdesselam Salmi on WhatsApp"
+                    class="social-link"
+                >
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span class="social-label">WhatsApp</span>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/yacinesse"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Abdesselam Salmi on Instagram"
+                    class="social-link"
+                >
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    <span class="social-label">Instagram</span>
+                </a>
+
+                <a
+                    href="https://t.me/yacinesse"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Message Abdesselam Salmi on Telegram"
+                    class="social-link"
+                >
+                    <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                    <span class="social-label">Telegram</span>
+                </a>
+
+                <a
+                    href="mailto:yacinesse@gmail.com"
+                    aria-label="Send email to Abdesselam Salmi"
+                    class="social-link"
+                >
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <span class="social-label">Email</span>
+                </a>
+            </nav>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> Abdesselam Salmi. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Auto-update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+/* =============================================
+   CSS Custom Properties (Design Tokens)
+   ============================================= */
+:root {
+    /* Color Palette */
+    --bg-color: #0f0f10;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-border-hover: rgba(255, 255, 255, 0.25);
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --glow-color: rgba(255, 255, 255, 0.2);
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 50%;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-Index Scale */
+    --z-base: 1;
+    --z-card: 10;
+    --z-overlay: 100;
+}
+
+/* =============================================
+   CSS Reset & Base Styles
+   ============================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================
+   Background Gradient Animation
+   ============================================= */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: var(--z-base);
+    animation: bgPulse 15s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* =============================================
+   Main Container
+   ============================================= */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+    position: relative;
+    z-index: var(--z-card);
+}
+
+/* =============================================
+   Glassmorphism Card
+   ============================================= */
+.glass-card {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow:
+        0 8px 32px var(--shadow-color),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: cardFadeIn var(--transition-slow) ease-out;
+    overflow: visible;
+}
+
+/* Subtle floating animation for card */
+.glass-card {
+    animation:
+        cardFadeIn var(--transition-slow) ease-out,
+        cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =============================================
+   Profile Picture
+   ============================================= */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 3px solid var(--glass-border);
+    box-shadow:
+        0 4px 15px var(--shadow-color),
+        0 0 30px var(--glow-color);
+    transition: all var(--transition-base);
+}
+
+.profile-pic:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow:
+        0 6px 20px var(--shadow-color),
+        0 0 40px rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* =============================================
+   Text Content
+   ============================================= */
+.info-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* =============================================
+   Social Links
+   ============================================= */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    padding: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    position: relative;
+    min-width: 70px;
+}
+
+.social-link i {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.social-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+    text-align: center;
+    white-space: nowrap;
+    opacity: 1;
+    transition: all var(--transition-base);
+}
+
+/* Social Link Hover Effects */
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--glass-border-hover);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        0 0 25px var(--glow-color);
+}
+
+.social-link:hover i {
+    color: var(--accent-color);
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px var(--glow-color));
+}
+
+.social-link:hover .social-label {
+    color: var(--text-primary);
+}
+
+/* Focus States for Accessibility */
+.social-link:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.social-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+    border-color: var(--glass-border-hover);
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+.footer {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm) 0;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* =============================================
+   Responsive Design
+   ============================================= */
+
+/* Mobile - Small Screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+    }
+
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    .glass-card {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .social-link {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .social-link i {
+        font-size: 1.5rem;
+    }
+
+    .social-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Mobile Portrait (max-width: 360px) */
+@media screen and (max-width: 360px) {
+    .social-links {
+        gap: var(--spacing-xs);
+    }
+
+    .social-link {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        padding: var(--spacing-xs);
+    }
+
+    .social-link i {
+        font-size: 1.3rem;
+    }
+
+    .social-label {
+        font-size: 0.6rem;
+    }
+}
+
+/* Tablet (481px - 1024px) */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .glass-card {
+        padding: var(--spacing-xl) var(--spacing-xl);
+        max-width: 420px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 1.85rem;
+    }
+
+    .social-links {
+        gap: var(--spacing-md);
+    }
+}
+
+/* Desktop (1025px+) */
+@media screen and (min-width: 1025px) {
+    .glass-card {
+        padding: var(--spacing-xl) var(--spacing-xl);
+        max-width: 450px;
+    }
+
+    .profile-pic {
+        width: 160px;
+        height: 160px;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .social-link {
+        width: 76px;
+        height: 76px;
+        min-width: 76px;
+    }
+
+    .social-link i {
+        font-size: 1.85rem;
+    }
+}
+
+/* =============================================
+   Reduced Motion (Accessibility)
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .glass-card {
+        animation: none;
+    }
+
+    .profile-pic,
+    .social-link,
+    .social-link i {
+        transition: none;
+    }
+}
+
+/* =============================================
+   Print Styles
+   ============================================= */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .glass-card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        background: white;
+    }
+
+    .social-link {
+        border: 1px solid #ccc;
+    }
+
+    body::before {
+        display: none;
+    }
+}
+
+/* =============================================
+   High Contrast Mode (Accessibility)
+   ============================================= */
+@media (prefers-contrast: high) {
+    :root {
+        --glass-bg: rgba(255, 255, 255, 0.15);
+        --glass-border: rgba(255, 255, 255, 0.4);
+        --text-secondary: #d4d4d4;
+    }
+
+    .glass-card {
+        border-width: 2px;
+    }
+
+    .social-link {
+        border-width: 2px;
+    }
+}
