@@ -807,6 +807,71 @@ a { cursor: none; }
 }
 
 /* ═══════════════════════════════════════════════════════
+   GYROSCOPE BUTTON
+═══════════════════════════════════════════════════════ */
+.gyro-btn {
+    display: none; /* revealed by JS on touch devices */
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--s2);
+    padding: 8px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,168,107,0.2);
+    border-radius: 24px;
+    color: var(--muted);
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background     0.3s var(--ease),
+        border-color   0.3s var(--ease),
+        color          0.3s var(--ease),
+        box-shadow     0.3s var(--ease),
+        transform      0.2s var(--spring);
+    animation: fadeSlideUp 0.5s var(--out) 1.4s both;
+    position: relative;
+    overflow: hidden;
+}
+.gyro-btn i {
+    font-size: 0.85rem;
+    transition: transform 0.4s var(--spring);
+}
+.gyro-btn:hover {
+    background: rgba(200,168,107,0.08);
+    border-color: rgba(200,168,107,0.4);
+    color: var(--gold);
+    box-shadow: 0 0 20px rgba(200,168,107,0.15);
+    transform: translateY(-1px);
+}
+.gyro-btn:hover i {
+    transform: rotate(-15deg) scale(1.15);
+}
+.gyro-btn:active {
+    transform: scale(0.96);
+}
+/* Active / tilt-on state */
+.gyro-btn.gyro-active {
+    background: rgba(200,168,107,0.12);
+    border-color: rgba(200,168,107,0.6);
+    color: var(--gold-bright);
+    box-shadow:
+        0 0 20px rgba(200,168,107,0.2),
+        0 0 40px rgba(200,168,107,0.08);
+}
+.gyro-btn.gyro-active i {
+    animation: gyroSpin 2.5s linear infinite;
+}
+@keyframes gyroSpin {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-20deg); }
+    75%  { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* ═══════════════════════════════════════════════════════
    UTILITY KEYFRAMES
 ═══════════════════════════════════════════════════════ */
 @keyframes fadeSlideUp {
