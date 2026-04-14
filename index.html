@@ -3,46 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abdesselam Salmi - Senior Motion Graphic Designer portfolio and contact links">
+    <meta name="description" content="Abdesselam Salmi - Senior Motion Graphic Designer">
     <meta name="author" content="Abdesselam Salmi">
-    <meta name="theme-color" content="#080810">
+    <meta name="theme-color" content="#04040a">
     <title>Abdesselam Salmi — Motion Designer</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Animated canvas background -->
-    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+    <!-- Aurora mesh background -->
+    <canvas id="auroraCanvas" aria-hidden="true"></canvas>
 
-    <!-- Ambient light orbs -->
-    <div class="orb orb-1" aria-hidden="true"></div>
-    <div class="orb orb-2" aria-hidden="true"></div>
-    <div class="orb orb-3" aria-hidden="true"></div>
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor" aria-hidden="true">
+        <div class="cursor-ring"></div>
+        <div class="cursor-dot"></div>
+    </div>
 
-    <!-- Noise texture overlay -->
-    <div class="noise" aria-hidden="true"></div>
+    <!-- Scanline overlay -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Vignette -->
+    <div class="vignette" aria-hidden="true"></div>
 
     <main class="container">
-        <article class="glass-card" aria-label="Business card for Abdesselam Salmi">
 
-            <!-- Animated border ring -->
-            <div class="card-ring" aria-hidden="true"></div>
+        <!-- Floating geometric decorations -->
+        <div class="geo geo-tl" aria-hidden="true"></div>
+        <div class="geo geo-br" aria-hidden="true"></div>
+
+        <article class="glass-card" id="card" aria-label="Business card for Abdesselam Salmi">
+
+            <!-- BorderGlow: outer ambient glow layer -->
+            <span class="edge-light" aria-hidden="true"></span>
+
+            <!-- Conic sweep border -->
+            <div class="card-sweep" aria-hidden="true"></div>
+            <!-- Inner glow frame -->
+            <div class="card-inner-frame" aria-hidden="true"></div>
+
+            <!-- Corner marks -->
+            <span class="corner corner-tl" aria-hidden="true"></span>
+            <span class="corner corner-tr" aria-hidden="true"></span>
+            <span class="corner corner-bl" aria-hidden="true"></span>
+            <span class="corner corner-br" aria-hidden="true"></span>
 
             <!-- Profile -->
             <div class="profile-section">
                 <div class="profile-wrapper">
-                    <div class="profile-ring" aria-hidden="true"></div>
-                    <div class="profile-ring profile-ring--2" aria-hidden="true"></div>
+                    <!-- Orbital rings -->
+                    <div class="orbit orbit-1" aria-hidden="true"></div>
+                    <div class="orbit orbit-2" aria-hidden="true"></div>
+                    <div class="orbit orbit-3" aria-hidden="true"></div>
+                    <!-- Halo -->
+                    <div class="profile-halo" aria-hidden="true"></div>
                     <img
                         src="Profile_Pic.png"
                         alt="Abdesselam Salmi"
@@ -52,33 +71,38 @@
                         loading="eager"
                     >
                 </div>
-                <!-- Status indicator -->
-                <div class="status-badge" aria-label="Available for work">
+
+                <div class="status-badge">
                     <span class="status-dot"></span>
-                    <span class="status-text">Available for projects</span>
+                    <span class="status-text">Open to work</span>
+                    <span class="status-ping" aria-hidden="true"></span>
                 </div>
             </div>
 
             <!-- Identity -->
             <div class="info-section">
-                <h1 class="name">
-                    <span class="name-first">Abdesselam</span>
-                    <span class="name-last">Salmi</span>
-                </h1>
-                <div class="title-row">
-                    <span class="title-line"></span>
-                    <p class="title">Senior Motion Graphic Designer</p>
-                    <span class="title-line"></span>
+                <div class="name-eyebrow" aria-hidden="true">
+                    <span class="eyebrow-line"></span>
+                    <span class="eyebrow-line"></span>
                 </div>
+                <h1 class="name">
+                    <span class="name-first" data-text="Abdesselam">Abdesselam</span>
+                    <span class="name-last" data-text="Salmi">Salmi</span>
+                </h1>
+                <p class="title">
+                    <span class="title-word">Senior</span>
+                    <span class="title-word title-accent">Motion</span>
+                    <span class="title-word">Graphic Designer</span>
+                </p>
             </div>
 
             <!-- Divider -->
             <div class="divider" aria-hidden="true">
-                <span class="divider-dot"></span>
-                <span class="divider-line"></span>
-                <span class="divider-diamond">&#9670;</span>
-                <span class="divider-line"></span>
-                <span class="divider-dot"></span>
+                <span class="div-line"></span>
+                <svg class="div-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 0 L10 6 L16 8 L10 10 L8 16 L6 10 L0 8 L6 6 Z" fill="currentColor" opacity="0.7"/>
+                </svg>
+                <span class="div-line"></span>
             </div>
 
             <!-- Social Links -->
@@ -87,227 +111,452 @@
                 <a href="https://www.behance.net/yacinessesalmi"
                    target="_blank" rel="noopener noreferrer"
                    aria-label="Behance portfolio"
-                   class="social-link" data-icon="behance">
+                   class="social-link" data-icon="behance" data-brand="Behance">
+                    <div class="link-glow-ring" aria-hidden="true"></div>
                     <i class="fa-brands fa-behance" aria-hidden="true"></i>
                     <span class="social-label">Behance</span>
+                    <div class="link-particles" aria-hidden="true"></div>
                 </a>
 
                 <a href="https://www.linkedin.com/in/abdesselam-salmi-070819242"
                    target="_blank" rel="noopener noreferrer"
                    aria-label="LinkedIn profile"
-                   class="social-link" data-icon="linkedin">
+                   class="social-link" data-icon="linkedin" data-brand="LinkedIn">
+                    <div class="link-glow-ring" aria-hidden="true"></div>
                     <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     <span class="social-label">LinkedIn</span>
+                    <div class="link-particles" aria-hidden="true"></div>
                 </a>
 
                 <a href="https://api.whatsapp.com/send/?phone=971503531737&text=Hi+I+found+your+business+card&type=phone_number&app_absent=0"
                    target="_blank" rel="noopener noreferrer"
-                   aria-label="WhatsApp chat"
-                   class="social-link" data-icon="whatsapp">
+                   aria-label="WhatsApp"
+                   class="social-link" data-icon="whatsapp" data-brand="WhatsApp">
+                    <div class="link-glow-ring" aria-hidden="true"></div>
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                     <span class="social-label">WhatsApp</span>
+                    <div class="link-particles" aria-hidden="true"></div>
                 </a>
 
                 <a href="https://www.instagram.com/yacinesse"
                    target="_blank" rel="noopener noreferrer"
-                   aria-label="Instagram profile"
-                   class="social-link" data-icon="instagram">
+                   aria-label="Instagram"
+                   class="social-link" data-icon="instagram" data-brand="Instagram">
+                    <div class="link-glow-ring" aria-hidden="true"></div>
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     <span class="social-label">Instagram</span>
+                    <div class="link-particles" aria-hidden="true"></div>
                 </a>
 
                 <a href="https://t.me/yacinesse"
                    target="_blank" rel="noopener noreferrer"
                    aria-label="Telegram"
-                   class="social-link" data-icon="telegram">
+                   class="social-link" data-icon="telegram" data-brand="Telegram">
+                    <div class="link-glow-ring" aria-hidden="true"></div>
                     <i class="fa-brands fa-telegram" aria-hidden="true"></i>
                     <span class="social-label">Telegram</span>
+                    <div class="link-particles" aria-hidden="true"></div>
                 </a>
 
                 <a href="mailto:yacinesse@gmail.com"
-                   aria-label="Send email"
-                   class="social-link" data-icon="email">
+                   aria-label="Email"
+                   class="social-link" data-icon="email" data-brand="Email">
+                    <div class="link-glow-ring" aria-hidden="true"></div>
                     <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <span class="social-label">Email</span>
+                    <div class="link-particles" aria-hidden="true"></div>
                 </a>
 
             </nav>
+
+            <!-- Bottom tag line -->
+            <div class="card-footer-tag" aria-hidden="true">
+                <span class="tag-dot"></span>
+                <span class="tag-text">Dubai, UAE</span>
+                <span class="tag-sep">·</span>
+                <span class="tag-text">yacinesse@gmail.com</span>
+                <span class="tag-dot"></span>
+            </div>
+
         </article>
+
+        <!-- Gyroscope toggle — shown by JS on touch devices only -->
+        <button id="gyroBtn" class="gyro-btn" aria-label="Toggle gyroscope tilt effect" style="display:none">
+            <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+            <span class="gyro-btn-text">Tilt Effect</span>
+        </button>
 
         <footer class="footer">
             <p>&copy; <span id="year"></span> Abdesselam Salmi</p>
         </footer>
     </main>
 
-    <script>
-        // ── Year ──────────────────────────────────────────────────
-        document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+/* ═══════════════════════════════════════════════
+   YEAR
+═══════════════════════════════════════════════ */
+document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ── Canvas particle system ────────────────────────────────
-        const canvas = document.getElementById('bgCanvas');
-        const ctx = canvas.getContext('2d');
-        let W, H, particles = [], mouse = { x: -9999, y: -9999 };
+/* ═══════════════════════════════════════════════
+   CUSTOM CURSOR
+═══════════════════════════════════════════════ */
+const cursorEl  = document.getElementById('cursor');
+const cursorRing = cursorEl.querySelector('.cursor-ring');
+const cursorDot  = cursorEl.querySelector('.cursor-dot');
+let   cx = -200, cy = -200, tx = -200, ty = -200;
+let   cursorVisible = false;
 
-        function resize() {
-            W = canvas.width = window.innerWidth;
-            H = canvas.height = window.innerHeight;
-        }
+document.addEventListener('mousemove', e => {
+    tx = e.clientX; ty = e.clientY;
+    if (!cursorVisible) { cursorVisible = true; cursorEl.classList.add('is-visible'); }
+});
+document.addEventListener('mouseleave', () => { cursorEl.classList.remove('is-visible'); cursorVisible = false; });
 
-        class Particle {
-            constructor() { this.reset(true); }
-            reset(random = false) {
-                this.x = Math.random() * W;
-                this.y = random ? Math.random() * H : H + 10;
-                this.r = Math.random() * 1.8 + 0.4;
-                this.vx = (Math.random() - 0.5) * 0.3;
-                this.vy = -(Math.random() * 0.5 + 0.2);
-                this.life = 0;
-                this.maxLife = Math.random() * 200 + 120;
-                this.hue = Math.random() * 60 + 220;
+// Lerp ring behind cursor
+(function lerpCursor() {
+    cx += (tx - cx) * 0.12;
+    cy += (ty - cy) * 0.12;
+    cursorRing.style.transform = `translate(${cx}px, ${cy}px) translate(-50%,-50%)`;
+    cursorDot.style.transform  = `translate(${tx}px, ${ty}px) translate(-50%,-50%)`;
+    requestAnimationFrame(lerpCursor);
+})();
+
+// Cursor grow on links
+document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursorEl.classList.add('is-hovering'));
+    el.addEventListener('mouseleave', () => cursorEl.classList.remove('is-hovering'));
+});
+
+/* ═══════════════════════════════════════════════
+   AURORA CANVAS
+═══════════════════════════════════════════════ */
+const canvas = document.getElementById('auroraCanvas');
+const ctx    = canvas.getContext('2d');
+let   W, H;
+
+function resizeCanvas() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Aurora blobs
+const blobs = [
+    { x: 0.2, y: 0.3, r: 0.38, hue: 240, speed: 0.00018, phase: 0    },
+    { x: 0.8, y: 0.2, r: 0.30, hue: 280, speed: 0.00023, phase: 2.1  },
+    { x: 0.5, y: 0.75,r: 0.35, hue: 220, speed: 0.00015, phase: 4.4  },
+    { x: 0.15,y: 0.8, r: 0.25, hue: 200, speed: 0.00020, phase: 1.1  },
+    { x: 0.85,y: 0.7, r: 0.28, hue: 260, speed: 0.00017, phase: 3.3  },
+];
+
+let mouseX = 0.5, mouseY = 0.5;
+window.addEventListener('mousemove', e => { mouseX = e.clientX/W; mouseY = e.clientY/H; });
+
+function drawAurora(t) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#04040a';
+    ctx.fillRect(0, 0, W, H);
+
+    blobs.forEach(b => {
+        const px = (b.x + Math.sin(t * b.speed + b.phase) * 0.18 + (mouseX - 0.5) * 0.06) * W;
+        const py = (b.y + Math.cos(t * b.speed + b.phase * 1.3) * 0.14 + (mouseY - 0.5) * 0.06) * H;
+        const r  = b.r * Math.min(W, H);
+        const g  = ctx.createRadialGradient(px, py, 0, px, py, r);
+        g.addColorStop(0,   `hsla(${b.hue}, 70%, 55%, 0.13)`);
+        g.addColorStop(0.4, `hsla(${b.hue}, 60%, 40%, 0.06)`);
+        g.addColorStop(1,   `hsla(${b.hue}, 50%, 30%, 0)`);
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(px, py, r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    // Subtle star field
+    ctx.fillStyle = 'rgba(255,255,255,0.55)';
+    for (let i = 0; i < 3; i++) {
+        const sx = (Math.sin(t * 0.00004 + i * 2.3) * 0.5 + 0.5) * W;
+        const sy = (Math.cos(t * 0.00003 + i * 1.7) * 0.5 + 0.5) * H;
+        ctx.beginPath();
+        ctx.arc(sx, sy, 0.8, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+// Static star field
+const stars = Array.from({length:120}, () => ({
+    x: Math.random(), y: Math.random(),
+    r: Math.random() * 0.9 + 0.2,
+    a: Math.random() * 0.5 + 0.1,
+    sp: Math.random() * 0.001 + 0.0003,
+    ph: Math.random() * Math.PI * 2
+}));
+
+function drawStars(t) {
+    stars.forEach(s => {
+        const alpha = s.a * (0.5 + 0.5 * Math.sin(t * s.sp + s.ph));
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle   = '#fff';
+        ctx.beginPath();
+        ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+}
+
+(function animateAurora(t) {
+    drawAurora(t);
+    drawStars(t);
+    requestAnimationFrame(animateAurora);
+})(0);
+
+
+/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+   CARD INTERACTION ENGINE
+   Desktop tilt \u2022 BorderGlow \u2022 Gyroscope \u2022 Touch parallax
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+const card      = document.getElementById('card');
+const CARD_TILT = 10;
+const MAX_GYRO  = 15;
+const DEAD_ZONE = 1.5;
+const LERP_F    = 0.1;
+let   cardRaf   = null;
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouchPrimary       = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+function applyTilt(rx, ry, z = 8) {
+    card.style.transform =
+        `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(${z}px)`;
+}
+
+/* \u2500 Border Glow helpers \u2500 */
+function getEdgeProximity(el, x, y) {
+    const { width: w, height: h } = el.getBoundingClientRect();
+    const cx = w / 2, cy = h / 2;
+    const dx = x - cx, dy = y - cy;
+    let kx = Infinity, ky = Infinity;
+    if (dx !== 0) kx = cx / Math.abs(dx);
+    if (dy !== 0) ky = cy / Math.abs(dy);
+    return clamp(1 / Math.min(kx, ky), 0, 1) * 100;
+}
+function getCursorAngle(el, x, y) {
+    const { width: w, height: h } = el.getBoundingClientRect();
+    const dx = x - w / 2, dy = y - h / 2;
+    if (dx === 0 && dy === 0) return 0;
+    let deg = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+    return deg < 0 ? deg + 360 : deg;
+}
+function updateBorderGlow(x, y) {
+    card.style.setProperty('--edge-proximity', getEdgeProximity(card, x, y).toFixed(2));
+    card.style.setProperty('--cursor-angle',   getCursorAngle(card, x, y).toFixed(2) + 'deg');
+}
+function resetCardTilt() {
+    cancelAnimationFrame(cardRaf);
+    card.style.setProperty('--edge-proximity', '0');
+    card.style.transition = 'transform 0.55s cubic-bezier(0.25,0.8,0.25,1), box-shadow 0.4s ease';
+    applyTilt(0, 0, 0);
+    setTimeout(() => { card.style.transition = ''; }, 600);
+}
+
+/* \u2500 Desktop: mouse tilt + spotlight + glow \u2500 */
+if (!isTouchPrimary && !prefersReducedMotion) {
+    card.addEventListener('mouseenter', () => {
+        card.style.transition = 'box-shadow 0.4s ease';
+    });
+    card.addEventListener('mousemove', e => {
+        const r  = card.getBoundingClientRect();
+        const lx = e.clientX - r.left, ly = e.clientY - r.top;
+        const dx = (lx - r.width  / 2) / (r.width  / 2);
+        const dy = (ly - r.height / 2) / (r.height / 2);
+        card.style.setProperty('--card-mx', (lx / r.width  * 100).toFixed(1) + '%');
+        card.style.setProperty('--card-my', (ly / r.height * 100).toFixed(1) + '%');
+        updateBorderGlow(lx, ly);
+        cancelAnimationFrame(cardRaf);
+        cardRaf = requestAnimationFrame(() => applyTilt(-dy * CARD_TILT, dx * CARD_TILT));
+    });
+    card.addEventListener('mouseleave', resetCardTilt);
+}
+
+/* \u2500 Gyroscope \u2014 DeviceOrientationEvent \u2500 */
+let gyroActive = false, gyroRAF = null;
+let gyroRX = 0, gyroRY = 0, lerpRX = 0, lerpRY = 0;
+let gyroBaseB = null, gyroBaseG = null;
+
+function lerpGyroLoop() {
+    lerpRX += (gyroRX - lerpRX) * LERP_F;
+    lerpRY += (gyroRY - lerpRY) * LERP_F;
+    applyTilt(lerpRX, lerpRY);
+    gyroRAF = requestAnimationFrame(lerpGyroLoop);
+}
+function onDeviceOrientation(e) {
+    const beta  = e.beta  ?? 0;
+    const gamma = e.gamma ?? 0;
+    if (gyroBaseB === null) { gyroBaseB = beta; gyroBaseG = gamma; }
+    const db = beta  - gyroBaseB;
+    const dg = gamma - gyroBaseG;
+    gyroRX = clamp(-(Math.abs(db) > DEAD_ZONE ? db : 0) * 0.55, -MAX_GYRO, MAX_GYRO);
+    gyroRY = clamp( (Math.abs(dg) > DEAD_ZONE ? dg : 0) * 0.55, -MAX_GYRO, MAX_GYRO);
+}
+function startGyro() {
+    if (gyroActive) return;
+    gyroActive = true;
+    gyroBaseB = gyroBaseG = null;
+    window.addEventListener('deviceorientation', onDeviceOrientation, { passive: true });
+    gyroRAF = requestAnimationFrame(lerpGyroLoop);
+    const btn = document.getElementById('gyroBtn');
+    if (btn) { btn.classList.add('gyro-active'); btn.querySelector('.gyro-btn-text').textContent = 'Tilt On'; }
+}
+function stopGyro() {
+    if (!gyroActive) return;
+    gyroActive = false;
+    window.removeEventListener('deviceorientation', onDeviceOrientation);
+    cancelAnimationFrame(gyroRAF);
+    gyroRX = gyroRY = lerpRX = lerpRY = 0;
+    resetCardTilt();
+    const btn = document.getElementById('gyroBtn');
+    if (btn) { btn.classList.remove('gyro-active'); btn.querySelector('.gyro-btn-text').textContent = 'Tilt Effect'; }
+}
+
+/* \u2500 Mobile: gyro button + touch parallax fallback \u2500 */
+if (isTouchPrimary && !prefersReducedMotion) {
+    const gyroBtn = document.getElementById('gyroBtn');
+    if (gyroBtn) {
+        gyroBtn.style.display = 'flex';
+        gyroBtn.addEventListener('click', async () => {
+            if (gyroActive) { stopGyro(); return; }
+            if (typeof DeviceOrientationEvent !== 'undefined' &&
+                typeof DeviceOrientationEvent.requestPermission === 'function') {
+                try {
+                    const perm = await DeviceOrientationEvent.requestPermission();
+                    if (perm === 'granted') startGyro();
+                } catch (err) { console.warn('Gyroscope denied:', err); }
+            } else {
+                startGyro();
             }
-            update() {
-                const dx = this.x - mouse.x, dy = this.y - mouse.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 80) {
-                    this.vx += (dx / dist) * 0.15;
-                    this.vy += (dy / dist) * 0.15;
-                }
-                this.x += this.vx;
-                this.y += this.vy;
-                this.vx *= 0.99;
-                this.vy *= 0.99;
-                this.life++;
-                if (this.life > this.maxLife || this.y < -10) this.reset();
-            }
-            draw() {
-                const alpha = Math.sin((this.life / this.maxLife) * Math.PI) * 0.55;
-                ctx.save();
-                ctx.globalAlpha = alpha;
-                ctx.fillStyle = `hsl(${this.hue}, 80%, 70%)`;
-                ctx.shadowColor = `hsl(${this.hue}, 90%, 60%)`;
-                ctx.shadowBlur = 6;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        function drawConnections() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const d = Math.sqrt(dx * dx + dy * dy);
-                    if (d < 90) {
-                        ctx.save();
-                        ctx.globalAlpha = (1 - d / 90) * 0.12;
-                        ctx.strokeStyle = `hsl(250, 70%, 70%)`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                        ctx.restore();
-                    }
-                }
-            }
-        }
-
-        function init() {
-            resize();
-            particles = Array.from({ length: 80 }, () => new Particle());
-        }
-
-        function loop() {
-            ctx.clearRect(0, 0, W, H);
-            drawConnections();
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(loop);
-        }
-
-        window.addEventListener('resize', resize);
-        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-        window.addEventListener('touchmove', e => {
-            mouse.x = e.touches[0].clientX;
-            mouse.y = e.touches[0].clientY;
-        }, { passive: true });
-
-        init();
-        loop();
-
-        // ── Staggered card entrance ───────────────────────────────
-        document.querySelectorAll('.social-link').forEach((el, i) => {
-            el.style.setProperty('--delay', `${i * 0.07 + 0.5}s`);
         });
+    }
 
-        // ── Magnetic 3-D tilt + cursor spotlight ─────────────────
-        const links = document.querySelectorAll('.social-link');
-        const TILT   = 14;   // max tilt degrees
-        const LIFT   = -8;   // px lift on hover
-        const SCALE  = 1.10;
+    card.addEventListener('touchmove', e => {
+        if (gyroActive) return;
+        const touch = e.touches[0];
+        const r  = card.getBoundingClientRect();
+        const lx = touch.clientX - r.left, ly = touch.clientY - r.top;
+        if (lx < 0 || ly < 0 || lx > r.width || ly > r.height) return;
+        const dx = (lx - r.width  / 2) / (r.width  / 2);
+        const dy = (ly - r.height / 2) / (r.height / 2);
+        card.style.setProperty('--card-mx', (lx / r.width  * 100).toFixed(1) + '%');
+        card.style.setProperty('--card-my', (ly / r.height * 100).toFixed(1) + '%');
+        updateBorderGlow(lx, ly);
+        cancelAnimationFrame(cardRaf);
+        cardRaf = requestAnimationFrame(() => applyTilt(-dy * CARD_TILT * 0.65, dx * CARD_TILT * 0.65));
+    }, { passive: true });
 
-        links.forEach(el => {
-            let raf = null;
-            let isHovered = false;
+    card.addEventListener('touchend', () => {
+        if (!gyroActive) resetCardTilt();
+    }, { passive: true });
+}
 
-            function applyTilt(e) {
-                const r   = el.getBoundingClientRect();
-                const cx  = r.left + r.width  / 2;
-                const cy  = r.top  + r.height / 2;
-                const dx  = (e.clientX - cx) / (r.width  / 2);  // -1 → 1
-                const dy  = (e.clientY - cy) / (r.height / 2);  // -1 → 1
+/* ═══════════════════════════════════════════════
+   SOCIAL LINK INTERACTIONS
+═══════════════════════════════════════════════ */
+document.querySelectorAll('.social-link').forEach((el, i) => {
+    // stagger entrance delay
+    el.style.setProperty('--delay', `${i * 0.08 + 0.6}s`);
 
-                // Cursor position as % for the ::before spotlight
-                const mx  = ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%';
-                const my  = ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%';
+    const TILT = 16, LIFT = -10, SCALE = 1.12;
+    let raf = null;
 
-                cancelAnimationFrame(raf);
-                raf = requestAnimationFrame(() => {
-                    el.style.transform =
-                        `perspective(600px)
-                         translateY(${LIFT}px)
-                         scale(${SCALE})
-                         rotateY(${dx * TILT}deg)
-                         rotateX(${-dy * TILT}deg)`;
-                    el.style.setProperty('--mx', mx);
-                    el.style.setProperty('--my', my);
-                });
-            }
+    // Spawn mini floating particles on hover
+    function spawnParticle(container, color) {
+        const p = document.createElement('span');
+        p.className = 'float-particle';
+        const size = Math.random() * 4 + 2;
+        const angle = Math.random() * 360;
+        const dist  = Math.random() * 30 + 20;
+        p.style.cssText = `
+            width:${size}px; height:${size}px;
+            background:${color};
+            left:${Math.random()*80+10}%;
+            top:${Math.random()*80+10}%;
+            --angle:${angle}deg;
+            --dist:${dist}px;
+            box-shadow: 0 0 ${size*2}px ${color};
+        `;
+        container.appendChild(p);
+        p.addEventListener('animationend', () => p.remove());
+    }
 
-            function resetTilt() {
-                isHovered = false;
-                cancelAnimationFrame(raf);
-                // Spring-back via CSS transition
-                el.style.transition =
-                    'transform 0.5s cubic-bezier(0.34,1.56,0.64,1), border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease';
-                el.style.transform = 'perspective(600px) translateY(0) scale(1) rotateY(0deg) rotateX(0deg)';
-            }
+    let particleInterval = null;
 
-            el.addEventListener('mouseenter', () => {
-                isHovered = true;
-                el.style.transition = 'border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease';
-            });
+    el.addEventListener('mouseenter', () => {
+        el.style.transition = 'border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease';
+        const container = el.querySelector('.link-particles');
+        const color = getComputedStyle(el).getPropertyValue('--link-rgb').trim();
+        particleInterval = setInterval(() => spawnParticle(container, `rgba(${color},0.7)`), 120);
+    });
 
-            el.addEventListener('mousemove', applyTilt);
+    el.addEventListener('mousemove', e => {
+        const r  = el.getBoundingClientRect();
+        const cx = r.left + r.width  / 2;
+        const cy = r.top  + r.height / 2;
+        const dx = (e.clientX - cx) / (r.width  / 2);
+        const dy = (e.clientY - cy) / (r.height / 2);
+        const mx = ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%';
+        const my = ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%';
 
-            el.addEventListener('mouseleave', resetTilt);
-
-            // Click ripple burst
-            el.addEventListener('click', function(e) {
-                const r    = el.getBoundingClientRect();
-                const size = Math.max(r.width, r.height) * 1.5;
-                const x    = e.clientX - r.left - size / 2;
-                const y    = e.clientY - r.top  - size / 2;
-
-                const ripple = document.createElement('span');
-                ripple.className = 'ripple';
-                ripple.style.cssText =
-                    `width:${size}px; height:${size}px; left:${x}px; top:${y}px;`;
-                el.appendChild(ripple);
-                ripple.addEventListener('animationend', () => ripple.remove());
-            });
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+            el.style.transform = `
+                perspective(500px)
+                translateY(${LIFT}px)
+                scale(${SCALE})
+                rotateY(${dx * TILT}deg)
+                rotateX(${-dy * TILT}deg)
+            `;
+            el.style.setProperty('--mx', mx);
+            el.style.setProperty('--my', my);
         });
-    </script>
+    });
+
+    el.addEventListener('mouseleave', () => {
+        clearInterval(particleInterval);
+        cancelAnimationFrame(raf);
+        el.style.transition = 'transform 0.6s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease';
+        el.style.transform  = 'perspective(500px) translateY(0) scale(1) rotateY(0deg) rotateX(0deg)';
+    });
+
+    // Ripple + shockwave on click
+    el.addEventListener('pointerdown', e => {
+        const r    = el.getBoundingClientRect();
+        const size = Math.max(r.width, r.height) * 2.5;
+        const x    = e.clientX - r.left - size / 2;
+        const y    = e.clientY - r.top  - size / 2;
+
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple-burst';
+        ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+        el.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+
+        // Shockwave ring
+        const wave = document.createElement('span');
+        wave.className = 'shockwave';
+        wave.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+        el.appendChild(wave);
+        wave.addEventListener('animationend', () => wave.remove());
+    });
+});
+
+/* ═══════════════════════════════════════════════
+   ENTRANCE SEQUENCE (Intersection Observer)
+═══════════════════════════════════════════════ */
+const cardEl = document.querySelector('.glass-card');
+const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+        cardEl.classList.add('is-visible');
+        obs.disconnect();
+    }
+}, { threshold: 0.1 });
+obs.observe(cardEl);
+</script>
 </body>
 </html>
