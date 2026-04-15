@@ -17,27 +17,21 @@
 </head>
 <body>
 
-    <!-- Aurora mesh background (shared) -->
     <canvas id="auroraCanvas" aria-hidden="true"></canvas>
 
-    <!-- Custom cursor -->
     <div class="cursor" id="cursor" aria-hidden="true">
         <div class="cursor-ring"></div>
         <div class="cursor-dot"></div>
     </div>
 
-    <!-- Scanline overlay -->
     <div class="scanlines" aria-hidden="true"></div>
 
-    <!-- Vignette -->
     <div class="vignette" aria-hidden="true"></div>
 
-    <!-- ═══ SCROLL PROGRESS BAR ═══ -->
     <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true">
         <div class="scroll-progress-fill" id="scrollProgressFill"></div>
     </div>
 
-    <!-- ═══ SECTION NAV DOTS ═══ -->
     <nav class="section-nav" id="sectionNav" aria-label="Resume sections" hidden>
         <button class="nav-dot active" data-target="resume-hero"    aria-label="Intro section"></button>
         <button class="nav-dot"        data-target="resume-exp"     aria-label="Experience section"></button>
@@ -46,14 +40,8 @@
         <button class="nav-dot"        data-target="resume-contact" aria-label="Contact section"></button>
     </nav>
 
-    <!-- ═══════════════════════════════════════════════
-         SITE WRAPPER
-    ═══════════════════════════════════════════════ -->
     <div class="site-wrapper" id="siteWrapper">
 
-        <!-- ─────────────────────────────────────────────
-             SECTION 0: BUSINESS CARD
-        ───────────────────────────────────────────── -->
         <section class="card-section" id="cardSection" aria-label="Business card">
             <main class="container">
 
@@ -71,7 +59,6 @@
                     <span class="corner corner-bl" aria-hidden="true"></span>
                     <span class="corner corner-br" aria-hidden="true"></span>
 
-                    <!-- Profile -->
                     <div class="profile-section">
                         <div class="profile-wrapper">
                             <div class="orbit orbit-1" aria-hidden="true"></div>
@@ -93,7 +80,6 @@
                         </div>
                     </div>
 
-                    <!-- Identity -->
                     <div class="info-section">
                         <div class="name-eyebrow" aria-hidden="true">
                             <span class="eyebrow-line"></span>
@@ -109,7 +95,6 @@
                         </p>
                     </div>
 
-                    <!-- Divider -->
                     <div class="divider" aria-hidden="true">
                         <span class="div-line"></span>
                         <svg class="div-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -118,7 +103,6 @@
                         <span class="div-line"></span>
                     </div>
 
-                    <!-- Social Links -->
                     <nav class="social-links" aria-label="Contact and social links">
 
                         <a href="https://www.behance.net/yacinessesalmi"
@@ -182,7 +166,6 @@
 
                     </nav>
 
-                    <!-- ── VIEW RESUME BUTTON ── -->
                     <div class="resume-cta-wrap">
                         <button class="resume-btn" id="viewResumeBtn" aria-label="View interactive resume" aria-expanded="false">
                             <span class="resume-btn-bg"   aria-hidden="true"></span>
@@ -196,7 +179,6 @@
                         </button>
                     </div>
 
-                    <!-- Bottom tag line -->
                     <div class="card-footer-tag" aria-hidden="true">
                         <span class="tag-dot"></span>
                         <span class="tag-text">Dubai, UAE</span>
@@ -207,7 +189,6 @@
 
                 </article>
 
-                <!-- Gyro button (shown by JS on touch devices) -->
                 <button id="gyroBtn" class="gyro-btn" aria-label="Toggle gyroscope tilt effect" style="display:none">
                     <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                     <span class="gyro-btn-text">Tilt Effect</span>
@@ -219,18 +200,13 @@
             </main>
         </section>
 
-        <!-- ─────────────────────────────────────────────
-             SECTION 1: RESUME (hidden until triggered)
-        ───────────────────────────────────────────── -->
         <section class="resume-section" id="resumeSection" hidden aria-label="Interactive resume">
 
-            <!-- Back-to-card button -->
             <button class="r-back-btn" id="backBtn" aria-label="Back to business card">
                 <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
                 <span>Back to Card</span>
             </button>
 
-            <!-- ══ SCENE 1: HERO ══ -->
             <div class="r-scene r-hero-scene" id="resume-hero">
                 <div class="r-hero-bg" aria-hidden="true">
                     <div class="r-hero-orb r-hero-orb-1"></div>
@@ -262,12 +238,12 @@
                         </div>
                         <div class="r-stat-div" aria-hidden="true"></div>
                         <div class="r-stat">
-                            <span class="r-stat-num" data-count="7">0</span>
+                            <span class="r-stat-num" data-count="7">0</span><sup>+</sup>
                             <span class="r-stat-label">Companies</span>
                         </div>
                         <div class="r-stat-div" aria-hidden="true"></div>
                         <div class="r-stat">
-                            <span class="r-stat-num" data-count="6">0</span>
+                            <span class="r-stat-num" data-count="6">0</span><sup>+</sup>
                             <span class="r-stat-label">Major Clients</span>
                         </div>
                     </div>
@@ -279,10 +255,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- /r-hero-scene -->
-
-            <!-- ══ SCENE 2: EXPERIENCE ══ -->
-            <div class="r-scene r-exp-scene" id="resume-exp">
+            </div><div class="r-scene r-exp-scene" id="resume-exp">
                 <div class="r-section-head reveal-up">
                     <span class="r-scene-num">02</span>
                     <div>
@@ -455,11 +428,7 @@
                         </div>
                     </div>
 
-                </div><!-- /r-timeline -->
-            </div><!-- /r-exp-scene -->
-
-            <!-- ══ SCENE 3: SKILLS ══ -->
-            <div class="r-scene r-skills-scene" id="resume-skills">
+                </div></div><div class="r-scene r-skills-scene" id="resume-skills">
                 <div class="r-section-head reveal-up">
                     <span class="r-scene-num">03</span>
                     <div>
@@ -470,7 +439,6 @@
 
                 <div class="r-skills-layout">
 
-                    <!-- Software bars -->
                     <div class="r-skill-panel reveal-up" style="--rd:0.05s">
                         <div class="r-skill-panel-head">
                             <i class="fa-solid fa-cube" aria-hidden="true"></i>
@@ -516,7 +484,6 @@
                         </ul>
                     </div>
 
-                    <!-- Technical hexes -->
                     <div class="r-skill-panel reveal-up" style="--rd:0.1s">
                         <div class="r-skill-panel-head">
                             <i class="fa-solid fa-film" aria-hidden="true"></i>
@@ -550,7 +517,6 @@
                         </ul>
                     </div>
 
-                    <!-- Soft + Languages -->
                     <div class="r-skill-panel r-skill-panel-duo reveal-up" style="--rd:0.15s">
                         <div class="r-duo-flex">
                             <div class="r-duo-col">
@@ -604,11 +570,7 @@
                         </div>
                     </div>
 
-                </div><!-- /r-skills-layout -->
-            </div><!-- /r-skills-scene -->
-
-            <!-- ══ SCENE 4: CLIENTS ══ -->
-            <div class="r-scene r-clients-scene" id="resume-clients">
+                </div></div><div class="r-scene r-clients-scene" id="resume-clients">
                 <div class="r-section-head reveal-up">
                     <span class="r-scene-num">04</span>
                     <div>
@@ -649,10 +611,7 @@
                         <span>LG</span>
                     </div>
                 </div>
-            </div><!-- /r-clients-scene -->
-
-            <!-- ══ SCENE 5: CONTACT ══ -->
-            <div class="r-scene r-contact-scene" id="resume-contact">
+            </div><div class="r-scene r-contact-scene" id="resume-contact">
                 <div class="r-contact-orb" aria-hidden="true"></div>
 
                 <div class="r-contact-inner">
@@ -703,16 +662,7 @@
                     </button>
                     <p class="r-foot-copy">&copy; <span id="yearResume"></span> Abdesselam Salmi</p>
                 </div>
-            </div><!-- /r-contact-scene -->
-
-        </section><!-- /resumeSection -->
-
-    </div><!-- /siteWrapper -->
-
-<!-- ═══════════════════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════════════════ -->
-<script>
+            </div></section></div><script>
 /* ── Year ── */
 const yr = new Date().getFullYear();
 document.getElementById('year').textContent = yr;
