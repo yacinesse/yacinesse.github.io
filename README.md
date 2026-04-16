@@ -21,7 +21,7 @@ D:\yacinesse.github.io\
 │   ├── styles.css      # Base layout and business card styles
 │   ├── resume.css      # Extended styles for the interactive resume
 │   ├── Demo_Reel.mp4   # Portfolio video showcase
-│   ├── Profile_Pic.png # Main profile avatar
+│   ├── Profile_Pic.webp # Main profile avatar
 │   └── ...             # Resume and other static assets
 └── README.md
 ```
