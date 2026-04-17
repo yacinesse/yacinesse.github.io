@@ -1,3 +1,13 @@
+/* ══════════════════════════════════════════════════════
+   RESUME.CSS  —  Abdesselam Salmi Interactive Resume
+   Extends styles.css with zero conflicts.
+   All resume classes are prefixed with .r- or resume-
+   
+   OPTIMIZATIONS APPLIED:
+   - Removed duplicate @keyframes goldShift (defined in styles.css)
+   - content-visibility: auto on off-screen resume scenes for faster initial paint
+   - GPU compositing hints consolidated
+════════════════════════════════════════════════════ */
 /* ═══════════════════════════════════════════════════════════
    RESUME.CSS  —  Abdesselam Salmi Interactive Resume
    Extends styles.css with zero conflicts.
@@ -315,6 +325,10 @@
     justify-content: center;
     padding: 100px clamp(24px, 6vw, 120px);
     position: relative;
+    /* OPTIMIZATION: defer layout/paint of off-screen scenes
+       contain-intrinsic-size prevents CLS during scroll */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 100vh;
 }
 .r-scene + .r-scene {
     border-top: 1px solid rgba(255,255,255,0.04);
@@ -482,7 +496,8 @@
     background-size: 200% auto;
     animation: goldShift 4s ease-in-out infinite;
 }
-@keyframes goldShift { 0%,100%{background-position:0% center;} 50%{background-position:100% center;} }
+/* goldShift defined in styles.css */
+50%{background-position:100% center;} }
 
 .r-hero-role {
     font-size: 0.72rem;

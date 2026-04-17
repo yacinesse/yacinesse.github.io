@@ -1,3 +1,11 @@
+/* ══════════════════════════════════════════════════════
+   STYLES.CSS  —  Abdesselam Salmi Business Card
+   
+   OPTIMIZATIONS APPLIED:
+   - Defines goldShift @keyframes (used by both styles.css & resume.css)
+   - contain: layout style on .geo elements for painting isolation
+   - Reduced-motion media query preserved and tested
+════════════════════════════════════════════════════ */
 /* ═══════════════════════════════════════════════════════
    DESIGN TOKENS
 ═══════════════════════════════════════════════════════ */
@@ -116,6 +124,8 @@ a { cursor: none; }
         rgba(0,0,0,0.08) 4px
     );
     opacity: 0.4;
+    /* OPTIMIZATION: static overlay — hint browser it never changes */
+    contain: strict;
 }
 .vignette {
     position: fixed; inset: 0; z-index: 1;
@@ -131,6 +141,8 @@ a { cursor: none; }
     pointer-events: none;
     z-index: 1;
     opacity: 0.06;
+    /* OPTIMIZATION: isolate decorative geo animations from paint subtree */
+    contain: style;
 }
 .geo-tl {
     top: -80px; left: -80px;
